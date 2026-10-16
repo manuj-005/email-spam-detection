@@ -1,66 +1,150 @@
 
 # MailGuard AI
-
 ## Email Spam Detection Using Machine Learning and NLP
 
-MailGuard AI is a machine-learning application that
-classifies email text into two categories:
+MailGuard AI is a Python-based email spam classification
+system developed using Machine Learning and Natural
+Language Processing (NLP).
 
-- Spam
-- Ham (Legitimate)
-
-## Technologies Used
-
-- Python
-- Pandas and NumPy
-- NLTK
-- Scikit-learn
-- TF-IDF
-- Streamlit
-- Matplotlib
-
-## Machine Learning Algorithms
-
-1. Multinomial Naive Bayes
-2. Logistic Regression
-3. Support Vector Machine (Linear SVM)
-
-## Selected Model
-
-Support Vector Machine (SVM)
-
-### Revised Evaluation Results
-
-- Accuracy: 98.53%
-- Spam Precision: 96.85%
-- Spam Recall: 98.17%
-- Spam F1-score: 97.51%
+It classifies email text as:
+- SPAM: Unwanted or potentially suspicious email
+- HAM: Email classified as not spam
 
 ## Features
 
-- Email Spam/Ham Classification
-- NLP-Based Text Preprocessing
-- TF-IDF Feature Extraction
-- Machine Learning Model Comparison
-- Performance Visualization
-- Confusion Matrix Evaluation
-- Interactive Streamlit Dashboard
+- Spam/Ham classification
+- NLP text preprocessing
+- TF-IDF feature extraction
+- Comparison of three ML algorithms
+- Interactive Streamlit interface
+- Performance metrics and confusion matrix
 
-## Run the Application
+## Technologies
 
-Install the required libraries:
+- Python 3.14
+- Pandas and NumPy
+- NLTK
+- Scikit-learn
+- Matplotlib
+- Streamlit
+- Joblib
 
-    python -m pip install -r requirements.txt
+## Machine Learning Models
 
-Start the application:
+1. Multinomial Naive Bayes
+2. Logistic Regression
+3. Linear Support Vector Machine (SVM)
 
-    python -m streamlit run app_v2.py
+## Dataset
 
-Note: The trained model file must be available
-inside the models directory.
+Source:
+https://github.com/kairess/toy-datasets/blob/master/spam_ham_dataset.csv
 
-## Limitations
+Original emails: 5,171
+Emails after duplicate removal: 4,993
 
-The system performs text-based spam classification.
-It does not independently verify senders, links,
-attachments, or all phishing attempts.
+The dataset contains email text and Spam/Ham labels.
+
+The dataset is not included in this repository.
+Download it separately if you wish to retrain the models.
+
+## Selected Model: SVM
+
+Revised held-out evaluation:
+
+| Metric | Result |
+|---|---|
+| Accuracy | 98.53% |
+| Spam Precision | 96.85% |
+| Spam Recall | 98.17% |
+| Spam F1-score | 97.51% |
+
+Final confusion matrix:
+
+[[523, 7],
+ [4, 215]]
+
+The revised evaluation used a 70/15/15 split.
+Earlier development experiments used a different split
+of the same dataset.
+
+## Installation
+
+Clone the repository:
+
+```powershell
+git clone https://github.com/manuj-005/email-spam-detection.git
+cd email-spam-detection
+```
+
+Create a virtual environment:
+
+```powershell
+python -m venv .venv
+```
+
+Activate it on Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Install dependencies:
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+## Run the Web Application
+
+The repository includes a saved trained model.
+
+Start Streamlit:
+
+```powershell
+python -m streamlit run app_v2.py
+```
+
+Open the local URL displayed in the terminal.
+
+## Retrain the Models (Optional)
+
+To reproduce the training workflow:
+
+1. Download spam_ham_dataset.csv from the dataset link.
+2. Create a folder named data in the project directory.
+3. Place the CSV inside data.
+
+Then execute:
+
+```powershell
+python src/preprocess.py
+python src/compare_models.py
+python src/final_evaluation.py
+```
+
+This regenerates the processed dataset, model
+comparison files, and final trained model.
+
+## System Architecture
+
+See [Architecture Documentation](docs/architecture.md).
+
+## Project Limitations
+
+- The model can make incorrect predictions.
+- It does not verify email senders.
+- It does not independently inspect malicious URLs.
+- It does not scan attachments.
+- It is not a complete phishing detection system.
+- Performance on modern emails may differ from the
+  historical dataset evaluation.
+
+## Future Enhancements
+
+- Modern phishing email datasets
+- URL and attachment analysis
+- Multilingual spam detection
+- Real-time email integration
+- Improved model generalization
+```
