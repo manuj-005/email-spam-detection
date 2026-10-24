@@ -1,0 +1,24 @@
+{
+    "selected_threshold": 0.022776957125305225,
+    "minimum_validation_recall": 0.96,
+    "default_confusion_matrix": [
+        [
+            521,
+            9
+        ],
+        [
+            6,
+            213
+        ]
+    ],
+    "tuned_confusion_matrix": [
+        [
+            523,
+            7
+        ],
+        [
+            6,
+            213
+        ]
+    ]
+}

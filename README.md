@@ -102,7 +102,7 @@ The repository includes a saved trained model.
 Start Streamlit:
 
 ```powershell
-python -m streamlit run app_v2.py
+python -m streamlit run app_v4.py
 ```
 
 Open the local URL displayed in the terminal.
@@ -148,3 +148,49 @@ See [Architecture Documentation](docs/architecture.md).
 - Real-time email integration
 - Improved model generalization
 ```
+
+
+## MailGuard AI V4 Features
+
+MailGuard AI V4 includes:
+
+- Cybersecurity-themed Streamlit dashboard
+- Email Spam/Ham classification
+- Explainable AI using Linear SVM feature contributions
+- Comparison of three ML algorithms
+- Stratified 5-fold cross-validation
+- Decision-threshold optimization experiment
+- External dataset generalization evaluation
+- Confusion matrices and classification metrics
+
+## External Dataset Evaluation
+
+The saved SVM was evaluated on three additional datasets
+without retraining.
+
+| Dataset | Accuracy | Spam F1 |
+|---|---:|---:|
+| Original held-out test | 98.53% | 97.51% |
+| Enron subset | 95.25% | 95.61% |
+| SpamAssassin | 57.68% | 52.70% |
+| LingSpam | 44.28% | 34.22% |
+
+The results reveal substantial generalization limitations,
+particularly high false-positive rates on SpamAssassin
+and LingSpam.
+
+The Enron subset is related to the original training source.
+It should not be considered fully independent evidence.
+
+## Reproducibility Notes
+
+The repository contains trained models and aggregate
+evaluation results.
+
+Raw datasets are excluded.
+
+The external evaluation dashboard displays saved results
+without requiring the original external email files.
+
+The experimental tuned threshold is not applied to
+the final deployed classifier.

@@ -1,0 +1,92 @@
+{
+  "SpamAssassin": {
+    "quality_checks": {
+      "original_rows": 6046,
+      "invalid_empty_or_oversized_removed": 7,
+      "empty_after_cleaning_removed": 0,
+      "conflicting_label_rows_removed": 533,
+      "duplicates_removed": 331,
+      "original_dataset_overlaps_removed": 0,
+      "evaluated_rows": 5175,
+      "ham_rows": 3898,
+      "spam_rows": 1277
+    },
+    "metrics": {
+      "accuracy": 0.5768115942028985,
+      "balanced_accuracy": 0.7040802202442631,
+      "spam_precision": 0.36385326573218013,
+      "spam_recall": 0.9553641346906813,
+      "spam_f1": 0.5269978401727862,
+      "confusion_matrix": [
+        [
+          1765,
+          2133
+        ],
+        [
+          57,
+          1220
+        ]
+      ]
+    }
+  },
+  "Enron subset (related source)": {
+    "quality_checks": {
+      "original_rows": 10000,
+      "invalid_empty_or_oversized_removed": 2,
+      "empty_after_cleaning_removed": 0,
+      "conflicting_label_rows_removed": 0,
+      "duplicates_removed": 347,
+      "original_dataset_overlaps_removed": 1574,
+      "evaluated_rows": 8077,
+      "ham_rows": 3797,
+      "spam_rows": 4280
+    },
+    "metrics": {
+      "accuracy": 0.9524575956419463,
+      "balanced_accuracy": 0.9509643926956599,
+      "spam_precision": 0.9369672498878421,
+      "spam_recall": 0.9759345794392523,
+      "spam_f1": 0.9560540169375144,
+      "confusion_matrix": [
+        [
+          3516,
+          281
+        ],
+        [
+          103,
+          4177
+        ]
+      ]
+    }
+  },
+  "LingSpam": {
+    "quality_checks": {
+      "original_rows": 2605,
+      "invalid_empty_or_oversized_removed": 1,
+      "empty_after_cleaning_removed": 0,
+      "conflicting_label_rows_removed": 0,
+      "duplicates_removed": 16,
+      "original_dataset_overlaps_removed": 0,
+      "evaluated_rows": 2588,
+      "ham_rows": 2165,
+      "spam_rows": 423
+    },
+    "metrics": {
+      "accuracy": 0.4428129829984544,
+      "balanced_accuracy": 0.6213224575368941,
+      "spam_precision": 0.211984171848502,
+      "spam_recall": 0.8865248226950354,
+      "spam_f1": 0.34215328467153283,
+      "confusion_matrix": [
+        [
+          771,
+          1394
+        ],
+        [
+          48,
+          375
+        ]
+      ]
+    }
+  }
+}

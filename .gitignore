@@ -1,5 +1,5 @@
 
-# Virtual environment
+# Virtual environments
 .venv/
 venv/
 
@@ -7,16 +7,14 @@ venv/
 __pycache__/
 *.pyc
 
-# Editor configuration
-.vscode/
+# Datasets - keep locally
+data/
 
-# Local secrets
+# Local configuration and secrets
 .env
 .streamlit/secrets.toml
 
-# Local email datasets
-data/*.csv
-
-# Temporary files
+# Editor and temporary files
+.vscode/
 *.log
 .DS_Store
